@@ -1,0 +1,348 @@
+2026-02-17T01:01:14.753172932Z [inf]  
+2026-02-17T01:01:15.083118269Z [inf]  [35m[Region: us-west1][0m
+2026-02-17T01:01:15.866240440Z [inf]  
+2026-02-17T01:01:15.866295565Z [inf]  [38;2;125;86;243m╭─────────────────╮[0m
+2026-02-17T01:01:15.866301654Z [inf]  [38;2;125;86;243m│[0m Railpack 0.17.2 [38;2;125;86;243m│[0m
+2026-02-17T01:01:15.866306136Z [inf]  [38;2;125;86;243m╰─────────────────╯[0m
+2026-02-17T01:01:15.866313279Z [inf]  
+2026-02-17T01:01:15.866318190Z [inf]  [97m↳ Detected Python[0m
+2026-02-17T01:01:15.866322707Z [inf]  [97m↳ Using pip[0m
+2026-02-17T01:01:15.866326996Z [inf]  
+2026-02-17T01:01:15.866331541Z [inf]  [1mPackages[0m
+2026-02-17T01:01:15.866335836Z [inf]  [38;5;238m──────────[0m
+2026-02-17T01:01:15.866340101Z [inf]  [95mpython[0m  [38;5;238m│[0m  [96m3.13.12[0m  [38;5;238m│[0m  railpack default (3.13)
+2026-02-17T01:01:15.866344102Z [inf]  
+2026-02-17T01:01:15.866348102Z [inf]  [1mSteps[0m
+2026-02-17T01:01:15.866352596Z [inf]  [38;5;238m──────────[0m
+2026-02-17T01:01:15.866356657Z [inf]  [95m▸ install[0m
+2026-02-17T01:01:15.866360650Z [inf]  [38;5;245m$[0m [1mpython -m venv /app/.venv[0m
+2026-02-17T01:01:15.866364689Z [inf]  [38;5;245m$[0m [1mpip install -r requirements.txt[0m
+2026-02-17T01:01:15.866368929Z [inf]  
+2026-02-17T01:01:15.866374015Z [inf]  [1mDeploy[0m
+2026-02-17T01:01:15.866380125Z [inf]  [38;5;238m──────────[0m
+2026-02-17T01:01:15.866386410Z [inf]  [38;5;245m$[0m [1muvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}[0m
+2026-02-17T01:01:15.866392671Z [inf]  
+2026-02-17T01:01:15.866399141Z [inf]  
+2026-02-17T01:01:15.870808227Z [inf]  Successfully prepared Railpack plan for build
+2026-02-17T01:01:15.870856868Z [inf]  
+2026-02-17T01:01:15.870866032Z [inf]  
+2026-02-17T01:01:15.871130479Z [inf]  context: glm4-fKp7
+2026-02-17T01:01:16.042177720Z [inf]  [internal] load build definition from railpack-plan.json
+2026-02-17T01:01:16.042248651Z [inf]  [internal] load build definition from railpack-plan.json
+2026-02-17T01:01:16.042265944Z [inf]  [internal] load build definition from railpack-plan.json
+2026-02-17T01:01:16.051302778Z [inf]  [internal] load build definition from railpack-plan.json
+2026-02-17T01:01:16.053415697Z [inf]  resolve image config for docker-image://ghcr.io/railwayapp/railpack-frontend:v0.17.2
+2026-02-17T01:01:16.308070996Z [inf]  resolve image config for docker-image://ghcr.io/railwayapp/railpack-frontend:v0.17.2
+2026-02-17T01:01:16.308120456Z [inf]  docker-image://ghcr.io/railwayapp/railpack-frontend:v0.17.2@sha256:28365a4aa9bba5675a71d2a7df568a19ab8da928dc150aaa63157752f0702a07
+2026-02-17T01:01:16.308229554Z [inf]  docker-image://ghcr.io/railwayapp/railpack-frontend:v0.17.2@sha256:28365a4aa9bba5675a71d2a7df568a19ab8da928dc150aaa63157752f0702a07
+2026-02-17T01:01:16.313571343Z [inf]  docker-image://ghcr.io/railwayapp/railpack-frontend:v0.17.2@sha256:28365a4aa9bba5675a71d2a7df568a19ab8da928dc150aaa63157752f0702a07
+2026-02-17T01:01:16.313848469Z [inf]  docker-image://ghcr.io/railwayapp/railpack-frontend:v0.17.2@sha256:28365a4aa9bba5675a71d2a7df568a19ab8da928dc150aaa63157752f0702a07
+2026-02-17T01:01:16.412077234Z [inf]  load build definition from railpack-plan.json
+2026-02-17T01:01:16.412140956Z [inf]  load build definition from railpack-plan.json
+2026-02-17T01:01:16.412156686Z [inf]  load build definition from railpack-plan.json
+2026-02-17T01:01:16.422136320Z [inf]  load build definition from railpack-plan.json
+2026-02-17T01:01:16.436871583Z [inf]  copy /etc/mise/config.toml
+2026-02-17T01:01:16.436936417Z [inf]  copy /usr/local/bin/mise
+2026-02-17T01:01:16.436957321Z [inf]  copy /mise/installs
+2026-02-17T01:01:16.436970548Z [inf]  copy /mise/shims
+2026-02-17T01:01:16.436985283Z [inf]  install mise packages: python
+2026-02-17T01:01:16.436998776Z [inf]  create mise config
+2026-02-17T01:01:16.437006687Z [inf]  mkdir /etc/mise
+2026-02-17T01:01:16.437015630Z [inf]  docker-image://ghcr.io/railwayapp/railpack-builder:latest
+2026-02-17T01:01:16.437023152Z [inf]  docker-image://ghcr.io/railwayapp/railpack-runtime:latest
+2026-02-17T01:01:16.437068511Z [inf]  [railpack] merge ghcr.io/railwayapp/railpack-runtime:latest, $packages:mise, $build, $build
+2026-02-17T01:01:16.437078732Z [inf]  copy /app
+2026-02-17T01:01:16.437090280Z [inf]  copy /app/.venv
+2026-02-17T01:01:16.437103417Z [inf]  copy / /app
+2026-02-17T01:01:16.437113846Z [inf]  pip install -r requirements.txt
+2026-02-17T01:01:16.437138288Z [inf]  copy requirements.txt
+2026-02-17T01:01:16.437152492Z [inf]  loading .
+2026-02-17T01:01:16.437166410Z [inf]  python -m venv /app/.venv
+2026-02-17T01:01:16.437178240Z [inf]  copy /root/.local/state/mise
+2026-02-17T01:01:16.437204803Z [inf]  docker-image://ghcr.io/railwayapp/railpack-runtime:latest
+2026-02-17T01:01:16.437217272Z [inf]  loading .
+2026-02-17T01:01:16.437239178Z [inf]  docker-image://ghcr.io/railwayapp/railpack-builder:latest
+2026-02-17T01:01:16.613929917Z [inf]  docker-image://ghcr.io/railwayapp/railpack-builder:latest
+2026-02-17T01:01:16.614141499Z [inf]  mkdir /etc/mise
+2026-02-17T01:01:16.614180738Z [inf]  loading .
+2026-02-17T01:01:16.614200675Z [inf]  create mise config
+2026-02-17T01:01:16.625501692Z [inf]  loading .
+2026-02-17T01:01:16.626246663Z [inf]  create mise config
+2026-02-17T01:01:16.628193037Z [inf]  install mise packages: python
+2026-02-17T01:01:16.661594815Z [inf]  docker-image://ghcr.io/railwayapp/railpack-runtime:latest
+2026-02-17T01:01:16.661836666Z [inf]  docker-image://ghcr.io/railwayapp/railpack-runtime:latest
+2026-02-17T01:01:16.912007683Z [inf]  mise python@3.13.12  install
+
+2026-02-17T01:01:16.91226036Z [inf]  mise python@3.13.12  download cpython-3.13.12+20260211-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz
+
+2026-02-17T01:01:17.306920456Z [inf]  mise python@3.13.12  extract cpython-3.13.12+20260211-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz
+
+2026-02-17T01:01:17.942079088Z [inf]  mise python@3.13.12  python --version
+
+2026-02-17T01:01:17.943901097Z [inf]  mise python@3.13.12  Python 3.13.12
+
+2026-02-17T01:01:17.950164949Z [inf]  mise python@3.13.12 ✓ installed
+
+2026-02-17T01:01:18.020323212Z [inf]  install mise packages: python
+2026-02-17T01:01:18.021775556Z [inf]  python -m venv /app/.venv
+2026-02-17T01:01:18.087469691Z [inf]  copy /mise/shims
+2026-02-17T01:01:18.094638294Z [inf]  copy /mise/shims
+2026-02-17T01:01:18.720158283Z [inf]  copy /mise/installs
+2026-02-17T01:01:19.218518968Z [inf]  copy /mise/installs
+2026-02-17T01:01:19.221623415Z [inf]  copy /usr/local/bin/mise
+2026-02-17T01:01:19.307574122Z [inf]  copy /usr/local/bin/mise
+2026-02-17T01:01:19.312578690Z [inf]  copy /etc/mise/config.toml
+2026-02-17T01:01:19.377716921Z [inf]  copy /etc/mise/config.toml
+2026-02-17T01:01:19.378893517Z [inf]  copy /root/.local/state/mise
+2026-02-17T01:01:19.404012215Z [inf]  copy /root/.local/state/mise
+2026-02-17T01:01:21.294055549Z [inf]  python -m venv /app/.venv
+2026-02-17T01:01:21.295263708Z [inf]  copy requirements.txt
+2026-02-17T01:01:21.357938496Z [inf]  copy requirements.txt
+2026-02-17T01:01:21.358819893Z [inf]  pip install -r requirements.txt
+2026-02-17T01:01:22.327230799Z [inf]  Collecting fastapi==0.109.0 (from -r requirements.txt (line 1))
+
+2026-02-17T01:01:22.371221327Z [inf]    Downloading fastapi-0.109.0-py3-none-any.whl.metadata (24 kB)
+
+2026-02-17T01:01:22.413974331Z [inf]  Collecting uvicorn==0.27.0 (from -r requirements.txt (line 2))
+
+2026-02-17T01:01:22.423330624Z [inf]    Downloading uvicorn-0.27.0-py3-none-any.whl.metadata (6.4 kB)
+
+2026-02-17T01:01:22.572898396Z [inf]  Collecting pydantic==2.5.3 (from -r requirements.txt (line 3))
+
+2026-02-17T01:01:22.582809455Z [inf]    Downloading pydantic-2.5.3-py3-none-any.whl.metadata (65 kB)
+
+2026-02-17T01:01:22.611781835Z [inf]  Collecting aiosqlite==0.19.0 (from -r requirements.txt (line 4))
+
+2026-02-17T01:01:22.621641977Z [inf]    Downloading aiosqlite-0.19.0-py3-none-any.whl.metadata (4.3 kB)
+
+2026-02-17T01:01:22.644688049Z [inf]  Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 5))
+
+2026-02-17T01:01:22.653081451Z [inf]    Downloading python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB)
+
+2026-02-17T01:01:22.700386226Z [inf]  Collecting starlette<0.36.0,>=0.35.0 (from fastapi==0.109.0->-r requirements.txt (line 1))
+
+2026-02-17T01:01:22.709386756Z [inf]    Downloading starlette-0.35.1-py3-none-any.whl.metadata (5.8 kB)
+
+2026-02-17T01:01:22.734498785Z [inf]  Collecting typing-extensions>=4.8.0 (from fastapi==0.109.0->-r requirements.txt (line 1))
+
+2026-02-17T01:01:22.743541538Z [inf]    Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+
+2026-02-17T01:01:22.762850573Z [inf]  Collecting annotated-types>=0.4.0 (from pydantic==2.5.3->-r requirements.txt (line 3))
+
+2026-02-17T01:01:22.771464886Z [inf]    Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+
+2026-02-17T01:01:23.338474772Z [inf]  Collecting pydantic-core==2.14.6 (from pydantic==2.5.3->-r requirements.txt (line 3))
+
+2026-02-17T01:01:23.349610478Z [inf]    Downloading pydantic_core-2.14.6.tar.gz (360 kB)
+
+2026-02-17T01:01:23.421858878Z [inf]    Installing build dependencies: started
+
+2026-02-17T01:01:24.963913871Z [inf]    Installing build dependencies: finished with status 'done'
+
+2026-02-17T01:01:24.964685473Z [inf]    Getting requirements to build wheel: started
+
+2026-02-17T01:01:25.167339141Z [inf]    Getting requirements to build wheel: finished with status 'done'
+
+2026-02-17T01:01:25.168673893Z [inf]    Installing backend dependencies: started
+
+2026-02-17T01:01:26.783951752Z [inf]    Installing backend dependencies: finished with status 'done'
+
+2026-02-17T01:01:26.78479656Z [inf]    Preparing metadata (pyproject.toml): started
+
+2026-02-17T01:01:40.176975685Z [inf]    Preparing metadata (pyproject.toml): finished with status 'done'
+
+2026-02-17T01:01:40.209854437Z [inf]  Collecting click>=7.0 (from uvicorn==0.27.0->-r requirements.txt (line 2))
+
+2026-02-17T01:01:40.219014109Z [inf]    Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+
+2026-02-17T01:01:40.237709347Z [inf]  Collecting h11>=0.8 (from uvicorn==0.27.0->-r requirements.txt (line 2))
+
+2026-02-17T01:01:40.238951325Z [inf]    Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+
+2026-02-17T01:01:40.274590872Z [inf]  Collecting anyio<5,>=3.4.0 (from starlette<0.36.0,>=0.35.0->fastapi==0.109.0->-r requirements.txt (line 1))
+
+2026-02-17T01:01:40.276202657Z [inf]    Using cached anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+
+2026-02-17T01:01:40.29738812Z [inf]  Collecting idna>=2.8 (from anyio<5,>=3.4.0->starlette<0.36.0,>=0.35.0->fastapi==0.109.0->-r requirements.txt (line 1))
+
+2026-02-17T01:01:40.299104489Z [inf]    Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+
+2026-02-17T01:01:40.314037792Z [inf]  Downloading fastapi-0.109.0-py3-none-any.whl (92 kB)
+
+2026-02-17T01:01:40.327765159Z [inf]  Downloading pydantic-2.5.3-py3-none-any.whl (381 kB)
+
+2026-02-17T01:01:40.350427998Z [inf]  Downloading uvicorn-0.27.0-py3-none-any.whl (60 kB)
+
+2026-02-17T01:01:40.363719254Z [inf]  Downloading aiosqlite-0.19.0-py3-none-any.whl (15 kB)
+
+2026-02-17T01:01:40.379371861Z [inf]  Downloading python_dotenv-1.0.0-py3-none-any.whl (19 kB)
+
+2026-02-17T01:01:40.394458742Z [inf]  Downloading starlette-0.35.1-py3-none-any.whl (71 kB)
+
+2026-02-17T01:01:40.401202192Z [inf]  Using cached anyio-4.12.1-py3-none-any.whl (113 kB)
+
+2026-02-17T01:01:40.410630569Z [inf]  Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+
+2026-02-17T01:01:40.423679799Z [inf]  Downloading click-8.3.1-py3-none-any.whl (108 kB)
+
+2026-02-17T01:01:40.429865059Z [inf]  Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+
+2026-02-17T01:01:40.43152858Z [inf]  Using cached idna-3.11-py3-none-any.whl (71 kB)
+
+2026-02-17T01:01:40.43331234Z [inf]  Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+
+2026-02-17T01:01:40.451106683Z [inf]  Building wheels for collected packages: pydantic-core
+
+2026-02-17T01:01:40.45210371Z [inf]    Building wheel for pydantic-core (pyproject.toml): started
+
+2026-02-17T01:01:46.172820275Z [inf]    Building wheel for pydantic-core (pyproject.toml): finished with status 'error'
+
+2026-02-17T01:01:46.180938075Z [inf]    error: subprocess-exited-with-error
+  
+  × Building wheel for pydantic-core (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [129 lines of output]
+      Running `maturin pep517 build-wheel -i /app/.venv/bin/python --compatibility off`
+      Rust not found, installing into a temporary directory
+      Python reports SOABI: cpython-313-x86_64-linux-gnu
+      Computed rustc target triple: x86_64-unknown-linux-gnu
+      Installation directory: /root/.cache/puccinialin
+      Rustup already downloaded
+      Installing rust to /root/.cache/puccinialin/rustup
+      warn: It looks like you have an existing rustup settings file at:
+      warn: /root/.rustup/settings.toml
+      warn: Rustup will install the default toolchain as specified in the settings file,
+      warn: instead of the one inferred from the default host triple.
+      info: profile set to 'minimal'
+      info: default host triple is x86_64-unknown-linux-gnu
+      warn: Updating existing toolchain, profile choice will be ignored
+      info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+      info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+      Checking if cargo is installed
+      cargo 1.93.1 (083ac5135 2025-12-15)
+      📦 Including license file `LICENSE`
+      🍹 Building a mixed python/rust project
+      🔗 Found pyo3 bindings
+      🐍 Found CPython 3.13 at /app/.venv/bin/python
+      📡 Using build options features, bindings from pyproject.toml
+         Compiling autocfg v1.1.0
+         Compiling proc-macro2 v1.0.69
+         Compiling unicode-ident v1.0.10
+         Compiling target-lexicon v0.12.9
+         Compiling quote v1.0.29
+         Compiling python3-dll-a v0.2.9
+         Compiling once_cell v1.18.0
+         Compiling libc v0.2.147
+         Compiling static_assertions v1.1.0
+         Compiling heck v0.4.1
+         Compiling version_check v0.9.4
+         Compiling cfg-if v1.0.0
+         Compiling parking_lot_core v0.9.8
+         Compiling rustversion v1.0.13
+         Compiling scopeguard v1.1.0
+         Compiling tinyvec_macros v0.1.1
+         Compiling smallvec v1.11.1
+         Compiling memchr v2.6.3
+         Compiling serde v1.0.190
+         Compiling serde_json v1.0.108
+         Compiling unindent v0.2.3
+         Compiling hashbrown v0.14.0
+         Compiling unicode-bidi v0.3.13
+         Compiling zerocopy v0.7.20
+         Compiling regex-syntax v0.8.2
+         Compiling equivalent v1.0.1
+         Compiling indoc v2.0.4
+         Compiling percent-encoding v2.3.0
+         Compiling itoa v1.0.8
+         Compiling ryu v1.0.14
+         Compiling base64 v0.21.5
+         Compiling uuid v1.5.0
+         Compiling lexical-util v0.8.5
+         Compiling tinyvec v1.6.0
+         Compiling form_urlencoded v1.2.0
+         Compiling ahash v0.8.6
+         Compiling num-traits v0.2.16
+         Compiling num-integer v0.1.45
+         Compiling lock_api v0.4.10
+         Compiling num-bigint v0.4.4
+         Compiling memoffset v0.9.0
+         Compiling aho-corasick v1.0.2
+         Compiling pyo3-build-config v0.20.0
+         Compiling indexmap v2.0.0
+         Compiling getrandom v0.2.10
+         Compiling syn v2.0.38
+         Compiling parking_lot v0.12.1
+         Compiling unicode-normalization v0.1.22
+         Compiling lexical-parse-integer v0.8.6
+         Compiling lexical-write-integer v0.8.5
+         Compiling lexical-parse-float v0.8.5
+         Compiling lexical-write-float v0.8.5
+         Compiling idna v0.4.0
+         Compiling lexical-core v0.8.5
+         Compiling pyo3-ffi v0.20.0
+         Compiling pyo3 v0.20.0
+         Compiling pydantic-core v2.14.6 (/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3)
+         Compiling url v2.4.1
+      error: failed to run custom build command for `pydantic-core v2.14.6 (/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3)`
+      
+      Caused by:
+        process didn't exit successfully: `/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/target/release/build/pydantic-core-d47aef07571e75b7/build-script-build` (exit status: 101)
+        --- stdout
+        cargo:rustc-cfg=Py_3_6
+        cargo:rustc-cfg=Py_3_7
+        cargo:rustc-cfg=Py_3_8
+        cargo:rustc-cfg=Py_3_9
+        cargo:rustc-cfg=Py_3_10
+        cargo:rustc-cfg=Py_3_11
+        cargo:rustc-cfg=Py_3_12
+        cargo:rustc-cfg=Py_3_13
+        cargo:rerun-if-changed=python/pydantic_core/core_schema.py
+        cargo:rerun-if-changed=generate_self_schema.py
+      
+        --- stderr
+        Traceback (most recent call last):
+          File "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/generate_self_schema.py", line 192, in eval_forward_ref
+            return type_._evaluate(core_schema.__dict__, None, set())
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        TypeError: ForwardRef._evaluate() missing 1 required keyword-only argument: 'recursive_guard'
+      
+        During handling of the above exception, another exception occurred:
+      
+        Traceback (most recent call last):
+          File "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/generate_self_schema.py", line 240, in <module>
+            main()
+            ~~~~^^
+          File "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/generate_self_schema.py", line 210, in main
+            value = get_schema(s, definitions)
+          File "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/generate_self_schema.py", line 54, in get_schema
+            return type_dict_schema(obj, definitions)
+          File "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/generate_self_schema.py", line 152, in type_dict_schema
+            field_type = eval_forward_ref(field_type)
+          File "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/generate_self_schema.py", line 195, in eval_forward_ref
+            return type_._evaluate(core_schema.__dict__, None)
+                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        TypeError: ForwardRef._evaluate() missing 1 required keyword-only argument: 'recursive_guard'
+      
+        thread 'main' (1994) panicked at build.rs:29:9:
+        generate_self_schema.py failed with exit status: 1
+        note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+      warning: build failed, waiting for other jobs to finish...
+      💥 maturin failed
+        Caused by: Failed to build a native library through cargo
+        Caused by: Cargo build finished with "exit status: 101": `env -u CARGO PYO3_BUILD_EXTENSION_MODULE="1" PYO3_ENVIRONMENT_SIGNATURE="cpython-3.13-64bit" PYO3_PYTHON="/app/.venv/bin/python" PYTHON_SYS_EXECUTABLE="/app/.venv/bin/python" "cargo" "rustc" "--profile" "release" "--features" "pyo3/extension-module" "--message-format" "json-render-diagnostics" "--manifest-path" "/tmp/pip-install-2fb5dxjl/pydantic-core_1319d553cd054f9e99ae0017faefa4e3/Cargo.toml" "--lib" "--crate-type" "cdylib"`
+      Error: command ['maturin', 'pep517', 'build-wheel', '-i', '/app/.venv/bin/python', '--compatibility', 'off'] returned non-zero exit status 1
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+
+2026-02-17T01:01:46.18140856Z [inf]    ERROR: Failed building wheel for pydantic-core
+
+2026-02-17T01:01:46.181680748Z [inf]  Failed to build pydantic-core
+
+2026-02-17T01:01:46.182494152Z [inf]  error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> pydantic-core
+
+2026-02-17T01:01:46.578550046Z [err]  pip install -r requirements.txt
+2026-02-17T01:01:46.602395309Z [err]  ERROR: failed to build: failed to solve: process "pip install -r requirements.txt" did not complete successfully: exit code: 1

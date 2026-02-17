@@ -142,6 +142,21 @@ async def delete_all_urls() -> None:
         await db.commit()
 
 # API Endpoints
+@app.get("/")
+async def root():
+    """Root endpoint with API information"""
+    return {
+        "name": "URL Shortener API",
+        "version": "1.0.0",
+        "endpoints": {
+            "health": "/health",
+            "docs": "/docs",
+            "shorten": "POST /shorten",
+            "list_urls": "GET /urls",
+            "redirect": "GET /{short_code}"
+        }
+    }
+
 @app.get("/health")
 async def health():
     """Health check endpoint"""
