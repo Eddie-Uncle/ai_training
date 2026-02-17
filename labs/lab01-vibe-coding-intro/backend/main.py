@@ -118,11 +118,48 @@ async def short_code_exists(short_code: str) -> bool:
         ) as cursor:
             return await cursor.fetchone() is not None
 
+async def get_all_urls(limit: int = 50) -> list:
+    """Get all shortened URLs, most recent first"""
+    async with aiosqlite.connect(DB_PATH) as db:
+        async with db.execute(
+            "SELECT short_code, original_url, created_at FROM urls ORDER BY created_at DESC LIMIT ?",
+            (limit,)
+        ) as cursor:
+            rows = await cursor.fetchall()
+            return [
+                {
+                    "short_code": row[0],
+                    "original_url": row[1],
+                    "created_at": row[2]
+                }
+                for row in rows
+            ]
+
 # API Endpoints
 @app.get("/health")
 async def health():
     """Health check endpoint"""
     return {"status": "healthy"}
+
+@app.get("/urls")
+async def get_urls(req: Request, limit: int = 50):
+    """
+    Get all shortened URLs
+    
+    - **limit**: Maximum number of URLs to return (default: 50)
+    """
+    urls = await get_all_urls(limit)
+    base_url = f"{req.url.scheme}://{req.url.netloc}"
+    
+    return [
+        {
+            "short_code": url["short_code"],
+            "short_url": f"{base_url}/{url['short_code']}",
+            "original_url": url["original_url"],
+            "created_at": url["created_at"]
+        }
+        for url in urls
+    ]
 
 @app.post("/shorten", response_model=URLResponse)
 async def shorten_url(request: URLRequest, req: Request) -> URLResponse:
