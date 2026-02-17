@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
     return [
       {
         source: '/api/shorten',
-        destination: 'http://localhost:8000/shorten',
+        destination: `${apiUrl}/shorten`,
       },
       {
         source: '/api/urls',
-        destination: 'http://localhost:8000/urls',
+        destination: `${apiUrl}/urls`,
       },
     ];
   },

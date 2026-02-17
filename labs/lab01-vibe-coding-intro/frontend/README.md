@@ -13,26 +13,47 @@ A Matrix-themed, responsive Next.js 14 frontend for the URL shortener service.
 - ✅ Form validation and error handling
 - 🔄 Loading states with Matrix-style animations
 - 🎨 Monospace fonts and terminal-style aesthetics
+- 🌐 Configurable backend URL via environment variables
+- ⚠️ Network error handling with timeouts
 
 ## Prerequisites
 
 - Node.js 18+ installed
-- Backend API running on http://localhost:8000
+- Backend API running (default: http://localhost:8000)
 
 ## Getting Started
 
-1. **Install dependencies:**
+1. **Copy environment file:**
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. **Configure backend URL (optional):**
+   Edit `.env.local` to change the backend URL:
+   ```bash
+   NEXT_PUBLIC_API_URL=http://localhost:8000
+   ```
+
+3. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Start the development server:**
+4. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-3. **Open your browser:**
+5. **Open your browser:**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `NEXT_PUBLIC_API_URL` | Backend API URL | `http://localhost:8000` |
+
+**Note:** After changing environment variables, restart the dev server.
 
 ## Build for Production
 

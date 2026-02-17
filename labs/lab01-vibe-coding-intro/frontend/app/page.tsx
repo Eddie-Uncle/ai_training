@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 interface ShortenResponse {
   short_code: string;
   short_url: string;
@@ -31,13 +33,25 @@ export default function Home() {
   const fetchHistory = async () => {
     setLoadingHistory(true);
     try {
-      const response = await fetch("/api/urls");
+      const response = await fetch("/api/urls", {
+        signal: AbortSignal.timeout(10000), // 10 second timeout
+      });
       if (response.ok) {
         const data = await response.json();
         setHistory(data);
+      } else {
+        console.error("Failed to fetch history: HTTP", response.status);
       }
     } catch (err) {
-      console.error("Failed to fetch history:", err);
+      if (err instanceof Error) {
+        if (err.name === 'AbortError' || err.name === 'TimeoutError') {
+          console.error("Request timeout: Backend server not responding");
+        } else if (err.message.includes('fetch')) {
+          console.error("Network error: Unable to connect to backend");
+        } else {
+          console.error("Failed to fetch history:", err.message);
+        }
+      }
     } finally {
       setLoadingHistory(false);
     }
@@ -47,18 +61,28 @@ export default function Home() {
     if (!confirm("Clear all shortened URLs?")) return;
     
     try {
-      const response = await fetch("http://localhost:8000/urls", {
+      const response = await fetch(`${API_URL}/urls`, {
         method: "DELETE",
+        signal: AbortSignal.timeout(10000),
       });
       
       if (response.ok) {
         setHistory([]);
         setShortUrl("");
       } else {
-        setError("Failed to clear history");
+        const errorText = await response.text().catch(() => "Unknown error");
+        setError(`Failed to clear history: ${errorText}`);
       }
     } catch (err) {
-      setError("Failed to clear history");
+      if (err instanceof Error) {
+        if (err.name === 'AbortError' || err.name === 'TimeoutError') {
+          setError("Request timeout: Backend not responding");
+        } else {
+          setError(`Network error: ${err.message}`);
+        }
+      } else {
+        setError("Failed to clear history");
+      }
     }
   };
 
@@ -86,10 +110,13 @@ export default function Home() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ url }),
+        signal: AbortSignal.timeout(10000),
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
+        const errorData = await response.json().catch(() => ({
+          detail: `HTTP ${response.status}: ${response.statusText}`
+        }));
         throw new Error(errorData.detail || "Failed to shorten URL");
       }
 
@@ -97,7 +124,17 @@ export default function Home() {
       setShortUrl(data.short_url);
       fetchHistory();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
+      if (err instanceof Error) {
+        if (err.name === 'AbortError' || err.name === 'TimeoutError') {
+          setError("Request timeout: Backend server not responding");
+        } else if (err.message.includes('fetch') || err.message.includes('Failed to fetch')) {
+          setError("Network error: Unable to connect to backend. Is it running?");
+        } else {
+          setError(err.message);
+        }
+      } else {
+        setError("An unexpected error occurred");
+      }
     } finally {
       setLoading(false);
     }
