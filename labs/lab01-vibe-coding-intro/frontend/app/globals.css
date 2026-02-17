@@ -7,7 +7,6 @@
   --matrix-bg-secondary: #1a1a1a;
   --matrix-green: #00ff41;
   --matrix-green-dark: #008f11;
-  --matrix-green-bright: #39ff14;
   --matrix-border: #00ff4133;
   --matrix-text: #00ff41;
   --matrix-text-dim: #00aa2e;
@@ -24,32 +23,20 @@ body {
     text-wrap: balance;
   }
   
-  .matrix-glow {
-    text-shadow: 0 0 10px var(--matrix-green-bright),
-                 0 0 20px var(--matrix-green),
-                 0 0 30px var(--matrix-green-dark);
-  }
-  
-  .matrix-box-glow {
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3),
-                inset 0 0 20px rgba(0, 255, 65, 0.05);
-  }
-  
   .matrix-border {
     border: 1px solid var(--matrix-border);
   }
   
   .matrix-button {
-    background: linear-gradient(135deg, var(--matrix-green-dark), var(--matrix-green));
+    background: var(--matrix-green-dark);
     border: 1px solid var(--matrix-green);
     color: #000;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   
   .matrix-button:hover:not(:disabled) {
-    box-shadow: 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green-dark);
-    transform: translateY(-2px);
+    background: var(--matrix-green);
   }
   
   .matrix-button:disabled {
@@ -61,13 +48,12 @@ body {
     background: rgba(0, 255, 65, 0.05);
     border: 1px solid var(--matrix-green-dark);
     color: var(--matrix-text);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   
   .matrix-input:focus {
     outline: none;
     border-color: var(--matrix-green);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
   }
   
   .matrix-input::placeholder {

@@ -12,6 +12,16 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Methods', value: 'GET,DELETE,POST,PUT' },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

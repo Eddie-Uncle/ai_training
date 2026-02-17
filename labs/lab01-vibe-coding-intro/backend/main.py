@@ -135,6 +135,12 @@ async def get_all_urls(limit: int = 50) -> list:
                 for row in rows
             ]
 
+async def delete_all_urls() -> None:
+    """Delete all shortened URLs from database"""
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute("DELETE FROM urls")
+        await db.commit()
+
 # API Endpoints
 @app.get("/health")
 async def health():
@@ -160,6 +166,14 @@ async def get_urls(req: Request, limit: int = 50):
         }
         for url in urls
     ]
+
+@app.delete("/urls")
+async def clear_urls():
+    """
+    Clear all shortened URLs from the database
+    """
+    await delete_all_urls()
+    return {"message": "All URLs cleared successfully"}
 
 @app.post("/shorten", response_model=URLResponse)
 async def shorten_url(request: URLRequest, req: Request) -> URLResponse:
